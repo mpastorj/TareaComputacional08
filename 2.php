@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 
 <html lang = "es">
 
@@ -11,16 +11,18 @@
 	
 	<body>
        <?php
-       $rut = $_POST['usuario'];
+         $rut = $_POST['usuario'];
 	     $password = $_POST['contraseña'];
-			 
-			 $upperpass = strtoupper($password);
+	
+	     $upperpass = strtoupper($password); 
 	
 	     $cliente = new SoapClient("http://informatica.utem.cl:8011/dirdoc-auth/ws/auth?wsdl");
-         
-			 $parametros = array("rut" => $rut , "password" => $password);
 
-       $consulta = $cliente->autenticar($parametros);
+         $passha_256 = hash("sha256",$upperpass);
+
+         $parametros = array("rut" => $rut , "password" => $passha_256);
+
+         $consulta = $cliente->autenticar($parametros);
 	
         ?>
             <h1> <?php echo $consulta->return->descripcion; ?> </h1> 
