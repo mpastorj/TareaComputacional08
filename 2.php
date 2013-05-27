@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 
 <html lang = "es">
 
@@ -25,6 +25,7 @@
          $consulta = $cliente->autenticar($parametros);
 	
         ?>
+	    <h1> <?php echo $consulta->return->mensaje; ?> </h1>
             <h1> <?php echo $consulta->return->descripcion; ?> </h1> 
  
     </body>
