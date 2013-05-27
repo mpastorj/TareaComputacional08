@@ -1,0 +1,11 @@
+Grupo 04
+
+-Pedro Cuevas Meza
+-Marilyn Pastor Jaque
+-Mónica Riquelme Vásquez
+
+
+
+Librería utilizada para consumir el webservice:
+
+NuSOAP : http://sourceforge.net/projects/nusoap/
